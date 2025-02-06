@@ -1,0 +1,53 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    text-align: center;
+    flex-direction: column;
+}
+
+h1{
+    margin-bottom: 1rem;
+}
+
+section {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    grid-column-gap: 1em;
+    grid-row-gap: 1em;
+    width: 40em;
+}
+
+.card {
+    aspect-ratio: 3.5 / 4.2 ;
+    position: relative;
+    transform-style: preserve-3d;
+    transition: 0.5s ease;
+ }
+
+ .card-wrapper {
+    display: inline-block;
+ }
+ 
+ .card-wrapper:hover .card {
+    transform: perspective(400px) rotateY(180deg);
+ }
+
+ .card-wrapper:not(:hover) .card{
+    transition: 1.5s ease;
+ }
+
+.card-front,
+.card-back {
+    background-color: rgb(204, 204, 204);
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    backface-visibility: hidden;
+}
+
+.card-back {
+    transform: rotateY(180deg);
+}
