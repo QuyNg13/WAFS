@@ -5,6 +5,7 @@ body {
     height: 100vh;
     text-align: center;
     flex-direction: column;
+    background-color: blanchedalmond;
 }
 
 h1{
@@ -17,11 +18,11 @@ section {
     grid-template-rows: repeat(2, 1fr);
     grid-column-gap: 1em;
     grid-row-gap: 1em;
-    width: 40em;
 }
 
 .card {
     aspect-ratio: 3.5 / 4.2 ;
+    width: 20em;
     position: relative;
     transform-style: preserve-3d;
     transition: 0.5s ease;
@@ -32,7 +33,12 @@ section {
  }
  
  .card-wrapper:hover .card {
-    transform: perspective(400px) rotateY(180deg);
+    transform: perspective(400px) rotateY(180deg) scale(1.1);
+    box-shadow: 1px 5px 30px rgb(94, 94, 94);
+ }
+
+ .card-wrapper:hover {
+    z-index: 1;
  }
 
  .card-wrapper:not(:hover) .card{
@@ -41,7 +47,7 @@ section {
 
 .card-front,
 .card-back {
-    background-color: rgb(204, 204, 204);
+    background-color: rgb(255, 255, 255);
     position: absolute;
     height: 100%;
     width: 100%;
@@ -50,4 +56,10 @@ section {
 
 .card-back {
     transform: rotateY(180deg);
+}
+
+.card-front img {
+    aspect-ratio: 1 /1;
+    max-width: 88.57%;
+    margin-top: 5.71%;
 }
