@@ -48,8 +48,9 @@ p {
 
 .camera-bottom{
     display: flex;
+    align-items: center;
+    flex-direction: column;
     position: relative;
-    justify-content: center;
     width: 360px;
     height: 92px;
     border-bottom-left-radius: 15px;
@@ -66,11 +67,33 @@ p {
     height: 28px;
     background: rgb(8, 8, 8);
     margin-top: 15px;
+    border: solid 2px rgb(26, 26, 26);
 }
 
 .camera-front p{
     margin: 0;
     color: aliceblue;
+}
+
+.tongue{
+    width: 300px;
+    height: 26px;
+    background: black;
+}
+
+.tongue-top{
+    width: 316px;
+    height: 3px;
+    background: black;
+    margin-top: 5px;
+    clip-path: polygon(0 0, 100% 0, 97% 100%, 3% 100%);
+}
+
+.tongue-gap{
+    width: 316px;
+    height: 5px;
+    background: black;
+    clip-path: polygon(2.8% 0, 97.2% 0, 100% 100%, 0% 100%);
 }
 
 .cards {
