@@ -25,25 +25,181 @@ p {
 }
 
 .camera-top{
-    width: 345px;
-    height: 160px;
+    display: flex;
+    align-items: center;
+    position: relative;
     border-top-left-radius: 26px;
     border-top-right-radius: 26px;
-    background: rgb(219, 189, 145);
+    background: rgb(197, 170, 130);
+}
+
+.camera-top-middle{
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+    align-items: center;
+    position: relative;
+    width: 345px;
+    height: 160px;
+}
+
+.lens{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    width: 135px;
+    height: 135px;
+    clip-path: circle(50% at 50% 50%);
+    background: rgb(8, 8, 8);
+    margin-bottom: 15px;
+}
+
+.lens-inner{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    width: 125px;
+    height: 125px;
+    clip-path: circle(50% at 50% 50%);
+    background: rgb(38, 38, 38);
+}
+
+.lens-glass{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    width: 70px;
+    height: 70px;
+    background: radial-gradient(at left 1%, #9a9a9a 3%, #151515 70%);
+    border-radius: 50%;
+    border: solid black 3px;
+}
+
+.lens-glare{
+    width: 20px;
+    height: 20px;
+    clip-path: circle(50% at 50% 50%);
+    background: rgb(173, 171, 171);
+    margin-left: 30px;
+    margin-top: 20px;
+}
+
+.rainbow-top{
+    display: flex;
+    align-content: center;
+    position: relative;
+    width: 36px;
+    height: 18px;
 }
 
 .camera-middle{
-    border-bottom: 40px solid rgb(219, 196, 163);
-	border-left: 7px solid transparent;
-	border-right: 7px solid transparent;
-	height: 0;
-	width: 346px;
+    display: flex;
+    justify-content: center;
+    position: relative;
+	height: 42px;
+	width: 360px;
+    background: rgb(219, 196, 163);
+    clip-path: polygon(2% 0, 98% 0, 100% 100%, 0% 100%);
+}
+
+.rainbow-middle{
+    display: flex;
+    align-content: center;
+    position: relative;
+    width: 36px;
+    height: 42px;
+}
+
+.rainbow-middle .pink{
+    width: 6px;
+    height: 42px;
+    background: rgb(255, 121, 188);
+}
+
+.rainbow-middle .red{
+    width: 6px;
+    height: 42px;
+    background: rgb(244, 89, 89);
+}
+
+.rainbow-middle .orange{
+    width: 6px;
+    height: 42px;
+    background: rgb(253, 184, 56);
+}
+
+.rainbow-middle .yellow{
+    width: 6px;
+    height: 42px;
+    background: rgb(255, 255, 109);
+}
+
+.rainbow-middle .green{
+    width: 6px;
+    height: 42px;
+    background: rgb(88, 196, 88);
+}
+
+.rainbow-middle .blue{
+    width: 6px;
+    height: 42px;
+    background: rgb(161, 219, 255);
 }
 
 .camera-bumper{
+    display: flex;
+    justify-content: center;
+    position: relative;
     width: 360px;
     height: 18px;
     background: rgb(219, 189, 145);
+}
+
+.rainbow-bumper{
+    display: flex;
+    align-content: center;
+    position: relative;
+    width: 36px;
+    height: 18px;
+}
+
+.pink{
+    width: 6px;
+    height: 18px;
+    background: hotpink;
+}
+
+.red{
+    width: 6px;
+    height: 18px;
+    background: rgb(236, 65, 65);
+}
+
+.orange{
+    width: 6px;
+    height: 18px;
+    background: orange;
+}
+
+.yellow{
+    width: 6px;
+    height: 18px;
+    background: yellow;
+}
+
+.green{
+    width: 6px;
+    height: 18px;
+    background: rgb(64, 184, 64);
+}
+
+.blue{
+    width: 6px;
+    height: 18px;
+    background: lightskyblue;
 }
 
 .camera-bottom{
