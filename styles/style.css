@@ -13,11 +13,8 @@ h1{
 }
 
 section {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: repeat(2, 1fr);
-    grid-column-gap: 1em;
-    grid-row-gap: 1em;
+    display: flex;
+    column-gap: 1em;
 }
 
 .card {
