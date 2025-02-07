@@ -3,26 +3,85 @@ body {
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    background-color: blanchedalmond;
+    background-color: rgb(0, 144, 173);
 }
 
 h1{
     margin-bottom: 1rem;
-}
-
-h2{
     text-align: center;
 }
 
-section {
+p {
+    padding-left: 1em;
+}
+
+.camera-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    margin: 0;
+}
+
+.camera-top{
+    width: 345px;
+    height: 160px;
+    border-top-left-radius: 26px;
+    border-top-right-radius: 26px;
+    background: rgb(219, 189, 145);
+}
+
+.camera-middle{
+    border-bottom: 40px solid rgb(219, 196, 163);
+	border-left: 7px solid transparent;
+	border-right: 7px solid transparent;
+	height: 0;
+	width: 346px;
+}
+
+.camera-bumper{
+    width: 360px;
+    height: 18px;
+    background: rgb(219, 189, 145);
+}
+
+.camera-bottom{
+    display: flex;
+    position: relative;
+    justify-content: center;
+    width: 360px;
+    height: 92px;
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+    background: rgb(32, 32, 32);
+}
+
+.camera-front{
+    display: flex;
+    position: relative;
+    text-align: left;
+    align-items: center;
+    width: 322px;
+    height: 28px;
+    background: rgb(8, 8, 8);
+    margin-top: 15px;
+}
+
+.camera-front p{
+    margin: 0;
+    color: aliceblue;
+}
+
+.cards {
     display: block;
     max-width: 100vw;
-    max-height: fit-content;
+    text-align: center;
 }
 
 .card {
     aspect-ratio: 3.5 / 4.2 ;
-    width: 15em;
+    width: 18em;
     position: relative;
     transform-style: preserve-3d;
     transition: 0.5s ease;
@@ -50,10 +109,16 @@ section {
     height: 100%;
     width: 100%;
     backface-visibility: hidden;
+    margin: 0;
+    text-align: left;
 }
 
 .card-back {
     transform: rotateY(180deg);
+}
+
+.card-front{
+    text-align: center;
 }
 
 .card-front img {
