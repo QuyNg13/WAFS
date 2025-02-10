@@ -1,18 +1,29 @@
 body {
-    display: block;
+    display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
     background-color: rgb(0, 144, 173);
+    margin: 0;
+    padding: 0;
 }
 
 h1{
     margin-bottom: 1rem;
     text-align: center;
+    font-family: sans-serif;
 }
 
 p {
     padding-left: 1em;
+}
+
+#camera {
+    width: 100%;
+    max-width: 500px;
+}
+#photo {
+    display: none;
 }
 
 .camera-container{
@@ -21,7 +32,9 @@ p {
     justify-content: center;
     align-items: center;
     position: relative;
-    margin: 0;
+    width: fit-content;
+    margin: auto;
+    max-width: 100vw;
 }
 
 .camera-top{
@@ -100,6 +113,115 @@ p {
     background: rgb(147, 126, 93);
 }
 
+.viewfinder-gap{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    border-radius: 8%;
+    width: 72px;
+    height: 72px;
+    background: rgb(0, 0, 0);
+}
+
+.viewfinder-glass{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    border-radius: 8%;
+    width: 68px;
+    height: 68px;
+    background: rgb(68, 68, 68);
+}
+
+/* https://css-tricks.com/the-shapes-of-css/ */
+.viewfinder-lens{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    width: 60px;
+    height: 65px;
+    border-radius: 50% / 10%; 
+    background: rgb(19, 19, 19);
+}
+.viewfinder-lens::before{
+    content: "";
+    position: absolute;
+    top: 10%;
+    bottom: 10%;
+    right: -5%;
+    left: -5%;
+    background: inherit;
+    border-radius: 5% / 50%;
+}
+
+/* https://css-tricks.com/the-shapes-of-css/ */
+.viewfinder-lens-inner{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    width: 27px;
+    height: 30px;
+    border-radius: 50% / 10%; 
+    background: rgb(100, 100, 100);
+}
+.viewfinder-lens-inner::before{
+    content: "";
+    position: absolute;
+    top: 10%;
+    bottom: 10%;
+    right: -5%;
+    left: -5%;
+    background: inherit;
+    border-radius: 5% / 50%;
+}
+
+.viewfinder-glare{
+    width: 7px;
+    height: 7px;
+    position: absolute;
+    background: white;
+    z-index: 0.1;
+    margin-left: 12px;
+    margin-top: 10px;
+    border-radius: 30%;
+}
+
+.lightmeter{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    width: 50px;
+    height: 50px;
+    background: linear-gradient(to left, white 50%, black 50%);
+    margin-top: 10px;
+    border-radius: 50%;
+}
+
+.lightmeter-dial{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    width: 50px;
+    height: 50px;
+    background: rgb(50, 50, 50);
+    margin-top: 3px;
+    border-radius: 50%;
+}
+
+.lightmeter-dial-top{
+    width: 45px;
+    height: 45px;
+    background: rgb(19, 19, 19);
+    margin-top: 3px;
+    border-radius: 50%;
+}
+
 .camera-top-middle{
     display: flex;
     flex-direction: column;
@@ -160,6 +282,13 @@ p {
     position: relative;
     width: 36px;
     height: 18px;
+    background: linear-gradient(to right,
+    hotpink 16.66%,
+    rgb(236, 65, 65) 16.66%, rgb(236, 65, 65) 33.33%,
+    orange 33.33%, orange 50%,
+    yellow 50%, yellow 66.66%,
+    rgb(64, 184, 64) 66.66%, rgb(64, 184, 64) 83.33%,
+    lightskyblue 83.33%, lightskyblue 100%);
 }
 
 .camera-middle{
@@ -178,42 +307,13 @@ p {
     position: relative;
     width: 36px;
     height: 42px;
-}
-
-.rainbow-middle .pink{
-    width: 6px;
-    height: 42px;
-    background: rgb(255, 121, 188);
-}
-
-.rainbow-middle .red{
-    width: 6px;
-    height: 42px;
-    background: rgb(244, 89, 89);
-}
-
-.rainbow-middle .orange{
-    width: 6px;
-    height: 42px;
-    background: rgb(253, 184, 56);
-}
-
-.rainbow-middle .yellow{
-    width: 6px;
-    height: 42px;
-    background: rgb(255, 255, 109);
-}
-
-.rainbow-middle .green{
-    width: 6px;
-    height: 42px;
-    background: rgb(88, 196, 88);
-}
-
-.rainbow-middle .blue{
-    width: 6px;
-    height: 42px;
-    background: rgb(161, 219, 255);
+    background: linear-gradient(to right,
+    rgb(255, 121, 188) 16.66%,
+    rgb(244, 89, 89) 16.66%, rgb(244, 89, 89) 33.33%,
+    rgb(253, 184, 56) 33.33%, rgb(253, 184, 56) 50%,
+    rgb(255, 255, 109) 50%, rgb(255, 255, 109) 66.66%,
+    rgb(88, 196, 88) 66.66%, rgb(88, 196, 88) 83.33%,
+    rgb(161, 219, 255) 83.33%, rgb(161, 219, 255) 100%);
 }
 
 .camera-bumper{
@@ -231,42 +331,13 @@ p {
     position: relative;
     width: 36px;
     height: 18px;
-}
-
-.pink{
-    width: 6px;
-    height: 18px;
-    background: hotpink;
-}
-
-.red{
-    width: 6px;
-    height: 18px;
-    background: rgb(236, 65, 65);
-}
-
-.orange{
-    width: 6px;
-    height: 18px;
-    background: orange;
-}
-
-.yellow{
-    width: 6px;
-    height: 18px;
-    background: yellow;
-}
-
-.green{
-    width: 6px;
-    height: 18px;
-    background: rgb(64, 184, 64);
-}
-
-.blue{
-    width: 6px;
-    height: 18px;
-    background: lightskyblue;
+    background: linear-gradient(to right,
+    hotpink 16.66%,
+    rgb(236, 65, 65) 16.66%, rgb(236, 65, 65) 33.33%,
+    orange 33.33%, orange 50%,
+    yellow 50%, yellow 66.66%,
+    rgb(64, 184, 64) 66.66%, rgb(64, 184, 64) 83.33%,
+    lightskyblue 83.33%, lightskyblue 100%);
 }
 
 .camera-bottom{

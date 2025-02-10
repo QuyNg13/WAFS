@@ -25,14 +25,7 @@
                     </div>
                 </div>
                 <div class="camera-top-middle">
-                    <div class="rainbow-top">
-                        <div class="pink"></div>
-                        <div class="red"></div>
-                        <div class="orange"></div>
-                        <div class="yellow"></div>
-                        <div class="green"></div>
-                        <div class="blue"></div>
-                    </div>
+                    <div class="rainbow-top"></div>
                     <div class="lens">
                         <div class="lens-inner">
                             <div class="lens-glass">
@@ -43,124 +36,125 @@
                 </div>
                 <div class="camera-top-side">
                     <div class="viewfinder">
-                        <div class="viewfinder-glass">
-                            <div class="viewfinder-lens">
-                                <div class="viewfinder-glare"></div>
+                        <div class="viewfinder-gap">
+                            <div class="viewfinder-glass">
+                                <div class="viewfinder-lens">
+                                    <div class="viewfinder-lens-inner"></div>
+                                    <div class="viewfinder-glare"></div>
+                                </div>
                             </div>
                         </div>
                     </div>
-                    <div class="lightmeter"></div>
+                    <div class="lightmeter">
+                        <div class="lightmeter-dial">
+                            <div class="lightmeter-dial-top"></div>
+                        </div>
+                    </div>
+                </div>
             </div>
-        </div>
-        <div class="camera-middle">
-            <div class="rainbow-middle">
-                <div class="pink"></div>
-                <div class="red"></div>
-                <div class="orange"></div>
-                <div class="yellow"></div>
-                <div class="green"></div>
-                <div class="blue"></div>
+            <div class="camera-middle">
+                <div class="rainbow-middle"></div>
             </div>
-        </div>
-        <div class="camera-bumper">
-            <div class="rainbow-bumper">
-                <div class="pink"></div>
-                <div class="red"></div>
-                <div class="orange"></div>
-                <div class="yellow"></div>
-                <div class="green"></div>
-                <div class="blue"></div>
+            <div class="camera-bumper">
+                <div class="rainbow-bumper"></div>
             </div>
-        </div>
-        <div class="camera-bottom">
-            <div class="camera-front">
-                <p>POLAROID LAND CAMERA</p>
+            <div class="camera-bottom">
+                <div class="camera-front">
+                    <p>POLAROID LAND CAMERA</p>
+                </div>
+                <div class="tongue-top"></div>
+                <div class="tongue"></div>
+                <div class="tongue-gap"></div>
             </div>
-            <div class="tongue-top"></div>
-            <div class="tongue"></div>
-            <div class="tongue-gap"></div>
-        </div>
         </div>
     </section>
-    <section class="cards">
-        <div class="card-wrapper">
-            <div class="card">
-                <section class="card-front">
-                    <img src="https://avatars.githubusercontent.com/u/144113542?s=48&v=4" alt="hoi">
-                    <h2>
-                        Wie ben ik?
-                    </h2>
-                </section>
-                <section class="card-back">
-                    <ul>
-                        <li>Naam: Quy Nguyen</li>
-                        <li>geboortedatum: </li>
-                        <li>Leeftijd: 22</li>
-                        <li>Woonplaats: Amersfoort</li>
-                    </ul>
-                </section>
-            </div>
-        </div>
-        <div class="card-wrapper">
-            <div class="card">
-                <section class="card-front">
-                    <img src="https://avatars.githubusercontent.com/u/144113542?s=48&v=4" alt="hoi">
-                    <h2>
-                        Leerdoel 1
-                    </h2>
-                </section>
-                <section class="card-back">
-                    <p>
-                        tekst
-                    </p>
-                </section>
-            </div>
-        </div>
-        <div class="card-wrapper">
-            <div class="card">
-                <section class="card-front">
-                    <img src="https://avatars.githubusercontent.com/u/144113542?s=48&v=4" alt="hoi">
-                    <h2>
-                        Leerdoel 2
-                    </h2>
-                </section>
-                <section class="card-back">
-                    <p>
-                        tekst
-                    </p>
-                </section>
-            </div>
-        </div>
-        <div class="card-wrapper">
-            <div class="card">
-                <section class="card-front">
-                    <img src="https://avatars.githubusercontent.com/u/144113542?s=48&v=4" alt="hoi">
-                    <h2>
-                        Leerdoel 3
-                    </h2>
-                </section>
-                <section class="card-back">
-                    <p>
-                        tekst
-                    </p>
-                </section>
-            </div>
-        </div>
-        <div class="card-wrapper">
-            <div class="card">
-                <section class="card-front">
-                    <img src="https://avatars.githubusercontent.com/u/144113542?s=48&v=4" alt="hoi">
-                    <h2>
-                        Hobbies
-                    </h2>
-                </section>
-                <section class="card-back">
-                    <p>
-                        tekst
-                    </p>
-                </section>
-            </div>
-        </div>
+    <section>
+        <video id="camera" autoplay></video>
+        <button id="capture-btn">Capture Photo</button>
+        <canvas id="photo"></canvas>
+        <script src="camera.js"></script>
+    </section>
+    <section>
+        <ul class="cards">
+            <li class="card-wrapper">
+                <div class="card">
+                    <section class="card-front">
+                        <img src="https://avatars.githubusercontent.com/u/144113542?s=48&v=4" alt="hoi">
+                        <h2>
+                            Wie ben ik?
+                        </h2>
+                    </section>
+                    <section class="card-back">
+                        <ul>
+                            <li>Naam: Quy Nguyen</li>
+                            <li>geboortedatum: </li>
+                            <li>Leeftijd: 22</li>
+                            <li>Woonplaats: Amersfoort</li>
+                        </ul>
+                    </section>
+                </div>
+            </li>
+            <li class="card-wrapper">
+                <div class="card">
+                    <section class="card-front">
+                        <img src="https://avatars.githubusercontent.com/u/144113542?s=48&v=4" alt="hoi">
+                        <h2>
+                            Leerdoel 1
+                        </h2>
+                    </section>
+                    <section class="card-back">
+                        <p>
+                            tekst
+                        </p>
+                    </section>
+                </div>
+            </li>
+            <li class="card-wrapper">
+                <div class="card">
+                    <section class="card-front">
+                        <img src="https://avatars.githubusercontent.com/u/144113542?s=48&v=4" alt="hoi">
+                        <h2>
+                            Leerdoel 2
+                        </h2>
+                    </section>
+                    <section class="card-back">
+                        <p>
+                            tekst
+                        </p>
+                    </section>
+                </div>
+            </li>
+            <li class="card-wrapper">
+                <div class="card">
+                    <section class="card-front">
+                        <img src="https://avatars.githubusercontent.com/u/144113542?s=48&v=4" alt="hoi">
+                        <h2>
+                            Leerdoel 3
+                        </h2>
+                    </section>
+                    <section class="card-back">
+                        <p>
+                            tekst
+                        </p>
+                    </section>
+                </div>
+            </li>
+            <li class="card-wrapper">
+                <div class="card">
+                    <section class="card-front">
+                        <img src="https://avatars.githubusercontent.com/u/144113542?s=48&v=4" alt="hoi">
+                        <h2>
+                            Hobbies
+                        </h2>
+                    </section>
+                    <section class="card-back">
+                        <p>
+                            tekst
+                        </p>
+                    </section>
+                </div>
+            </li>
+        </ul>
     </section>
     <script src="script.js"></script>
 </body>
