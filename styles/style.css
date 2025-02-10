@@ -33,13 +33,80 @@ p {
     background: rgb(197, 170, 130);
 }
 
+.camera-top-side{
+    display: flex;
+    flex-direction: column;   
+    align-items: center;
+    position: relative;
+    width: 105px;
+    height: 160px;
+}
+
+.camera-tag{
+    margin-top: 50px;
+    border-radius: 10%;
+    background: rgb(27, 27, 27);
+}
+
+.camera-tag p{
+    margin: 0;
+    padding: 0.2em;
+    font-family: "Aldrich", serif;
+    color: white;
+}
+
+.camera-button{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    margin-top: 12px;
+    background: rgb(201, 176, 138);
+    box-shadow: rgba(0, 0, 0, 0.3) 1.95px 1.95px 2.6px;
+}
+
+.camera-button-gap{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    background: rgb(0, 0, 0);
+}
+
+.camera-button-shutter{
+    width: 41px;
+    height: 41px;
+    margin-top: 4px;
+    border-radius: 50%;
+    background: rgb(196, 18, 18);
+    box-shadow: rgb(162, 7, 7) 0px -2.5px;
+}
+
+.viewfinder{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    width: 77px;
+    height: 77px;
+    border-radius: 10%;
+    margin-top: 10px;
+    background: rgb(147, 126, 93);
+}
+
 .camera-top-middle{
     display: flex;
     flex-direction: column;
     justify-content: end;
     align-items: center;
     position: relative;
-    width: 345px;
+    width: 135px;
     height: 160px;
 }
 
@@ -229,6 +296,7 @@ p {
 .camera-front p{
     margin: 0;
     color: aliceblue;
+    font-family: sans-serif;
 }
 
 .tongue{
