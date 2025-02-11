@@ -21,21 +21,31 @@ async function getData(URL) {
 	);
 }
 
-const video = document.getElementById('camera');
-const canvas = document.getElementById('photo');
-const captureBtn = document.getElementById('capture-btn');
-const context = canvas.getContext('2d');
+const video = document.getElementById('video');
+const canvas = document.getElementById('canvas');
+const photo = document.getElementById('photo');
+const captureButton = document.getElementById('captureButton');
 
-navigator.mediaDevices.getUserMedia({ video: true })
-    .then((stream) => {
-        video.srcObject = stream;
-    })
-    .catch((error) => {
-        console.error("Error accessing the camera: ", error);
-    });
+async function startCamera() {
+	try {
+		const stream = await navigator.mediaDevices.getUserMedia({ 
+			video: { 
+				facingMode: 'environment' 
+			} 
+		});
+		video.srcObject = stream;
+	} catch (err) {
+		console.error("Error accessing the camera", err);
+		alert("Error accessing the camera: " + err.message);
+	}
+}
 
-captureBtn.addEventListener('click', () => {
-    canvas.width = video.videoWidth;
-    canvas.height = video.videoHeight;
-    context.drawImage(video, 0, 0, canvas.width, canvas.height);
+captureButton.addEventListener('click', () => {
+	canvas.width = video.videoWidth;
+	canvas.height = video.videoHeight;
+	canvas.getContext('2d').drawImage(video, 0, 0, canvas.width, canvas.height);
+	const imageDataUrl = canvas.toDataURL('image/jpeg');
+	photo.src = imageDataUrl;
 });
+
+window.addEventListener('load', startCamera);
