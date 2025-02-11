@@ -7,8 +7,6 @@ getData(myURL).then( data217 => {
 	let myName = data217.data.name;
 	deH1.textContent = myName;
 });
-
-
 async function getData(URL) {
 	return (
 		fetch(URL) 
@@ -26,6 +24,7 @@ const canvas = document.getElementById('canvas');
 const photo = document.getElementById('photo');
 const captureButton = document.getElementById('captureButton');
 const capturedphoto = document.querySelector('.captured-polaroid');
+const lens = document.querySelector('.lens-glass');
 
 async function startCamera() {
 	try {
@@ -44,11 +43,15 @@ async function startCamera() {
 captureButton.addEventListener('click', () => {
 	canvas.width = video.videoWidth;
 	canvas.height = video.videoHeight;
-	canvas.getContext('2d').drawImage(video, 0, 0, canvas.width, canvas.height);
-	const imageDataUrl = canvas.toDataURL('image/jpeg');
-	photo.src = imageDataUrl;
-	capturedphoto.classList.add("show");
-
+	lens.classList.remove("rotate");
+	void lens.offsetWidth;
+	lens.classList.add("rotate");
+	lens.addEventListener('animationend', () => {
+		capturedphoto.classList.add("show");
+		canvas.getContext('2d').drawImage(video, 0, 0, canvas.width, canvas.height);
+		const imageDataUrl = canvas.toDataURL('image/jpeg'); 
+		photo.src = imageDataUrl;
+	}, { once: true });
 });
 
 window.addEventListener('load', startCamera);

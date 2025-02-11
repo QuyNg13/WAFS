@@ -62,7 +62,7 @@ ul {
     opacity: 0;
     z-index: -1;
     margin-bottom: 0;
-    transition: transform 5s ease-in-out, opacity 5s ease-in-out;
+    transition: transform 1s ease-in-out, opacity 1s ease-in-out;
 }
 
 .captured-polaroid.show {
@@ -283,6 +283,7 @@ ul {
     background: rgb(19, 19, 19);
     margin-top: 3px;
     border-radius: 50%;
+    box-shadow: rgba(0, 0, 0, 0.5) 4px 4px 2.5px;
 }
 
 .camera-top-middle{
@@ -328,6 +329,23 @@ ul {
     background: radial-gradient(at left 1%, #9a9a9a 3%, #151515 70%);
     border-radius: 50%;
     border: solid black 3px;
+    transition: transform 0.5s ease-in-out;
+}
+
+.lens-glass.rotate {
+    animation: lensRotation 1s ease-in-out;
+}
+
+@keyframes lensRotation {
+    0% {
+      transform: rotate(0deg);
+    }
+    50% {
+      transform: rotate(100deg); 
+    }
+    100% {
+      transform: rotate(0deg); 
+    }
 }
 
 .lens-glare{
