@@ -18,6 +18,12 @@ p {
     margin-left: 1em;
 }
 
+ul {
+    padding: 0;
+    list-style: none;
+    text-align: left;
+}
+
 #video{
     position: absolute;
     visibility: hidden;
@@ -479,10 +485,4 @@ p {
     aspect-ratio: 1 /1;
     max-width: 88.57%;
     margin-top: 5.71%;
-}
-
-ul {
-    padding: 0;
-    list-style: none;
-    text-align: left;
 }
