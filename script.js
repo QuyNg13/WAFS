@@ -51,6 +51,7 @@ captureButton.addEventListener('click', () => {
 		canvas.getContext('2d').drawImage(video, 0, 0, canvas.width, canvas.height);
 		const imageDataUrl = canvas.toDataURL('image/jpeg'); 
 		photo.src = imageDataUrl;
+		photo.classList.add("show")
 	}, { once: true });
 });
 

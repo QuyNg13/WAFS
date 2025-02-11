@@ -38,10 +38,18 @@ ul {
 }
 #photo{
     border: 1px solid #ddd;
+    background: lightblue;
     aspect-ratio: 1 /1;
     max-width: 88.57%;
     margin-top: 5.71%;
+    opacity: 0;
+    transition: opacity 5s ease-in-out;
 }
+
+#photo.show{
+    opacity: 1;
+}
+
 #captureButton{
     width: 50px;
     height: 50px;
@@ -449,6 +457,7 @@ ul {
     margin: 0;
     color: aliceblue;
     font-family: sans-serif;
+    margin-left: 0.5em;
 }
 
 .tongue{
