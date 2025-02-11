@@ -25,7 +25,7 @@ const video = document.getElementById('video');
 const canvas = document.getElementById('canvas');
 const photo = document.getElementById('photo');
 const captureButton = document.getElementById('captureButton');
-const capturedphoto = document.querySelector('.captured-polaroid')
+const capturedphoto = document.querySelector('.captured-polaroid');
 
 async function startCamera() {
 	try {
