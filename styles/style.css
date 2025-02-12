@@ -8,7 +8,14 @@ body {
     padding: 0;
 }
 
-body section{
+header{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+section{
     display: flex;
     justify-content: center;
     align-items: center;
@@ -17,6 +24,10 @@ body section{
 h1{
     margin-bottom: 1rem;
     text-align: center;
+    font-family: sans-serif;
+}
+
+h2{
     font-family: sans-serif;
 }
 
@@ -43,7 +54,7 @@ ul {
     max-width: 88.57%;
     margin-top: 5.71%;
     opacity: 0;
-    transition: opacity 5s ease-in-out;
+    transition: opacity 14s ease-in;
 }
 
 #photo.show{
@@ -453,13 +464,6 @@ ul {
     border: solid 2px rgb(26, 26, 26);
 }
 
-.camera-front p{
-    margin: 0;
-    color: aliceblue;
-    font-family: sans-serif;
-    margin-left: 0.5em;
-}
-
 .tongue{
     width: 300px;
     height: 26px;
@@ -493,6 +497,7 @@ ul {
     position: relative;
     transform-style: preserve-3d;
     transition: 0.5s ease;
+    font-family: sans-serif;
  }
 
  .card-wrapper {
@@ -526,6 +531,11 @@ ul {
 .card-back {
     transform: rotateY(180deg);
     align-items: start;
+    text-align: left;
+}
+
+.card-back p{
+    margin: 1em;
 }
 
 .card-back ul{

@@ -10,158 +10,171 @@
 </head>
 
 <body>
-    <h1></h1>
-    <section>
-        <div class="camera-container">
-            <div class="camera-top">
-                <div class="camera-top-side">
-                    <div class="camera-tag">
-                        <p>1000</p>
-                    </div>
-                    <div class="camera-button">
-                        <div class="camera-button-gap">
-                            <div class="camera-button-shutter">
-                                <button id="captureButton"></button>
-                            </div>
+    <header>
+        <h1></h1>
+        <h2>shoot me!</h2>
+        <section>
+            <div class="camera-container">
+                <div class="camera-top">
+                    <div class="camera-top-side">
+                        <div class="camera-tag">
+                            <p>1000</p>
                         </div>
-                    </div>
-                </div>
-                <div class="camera-top-middle">
-                    <div class="rainbow-top"></div>
-                    <div class="lens">
-                        <div class="lens-inner">
-                            <div class="lens-glass">
-                                <div class="lens-glare"></div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="camera-top-side">
-                    <div class="viewfinder">
-                        <div class="viewfinder-gap">
-                            <div class="viewfinder-glass">
-                                <div class="viewfinder-lens">
-                                    <div class="viewfinder-lens-inner"></div>
-                                    <div class="viewfinder-glare"></div>
+                        <div class="camera-button">
+                            <div class="camera-button-gap">
+                                <div class="camera-button-shutter">
+                                    <button id="captureButton"></button>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <div class="lightmeter">
-                        <div class="lightmeter-dial">
-                            <div class="lightmeter-dial-top"></div>
+                    <div class="camera-top-middle">
+                        <div class="rainbow-top"></div>
+                        <div class="lens">
+                            <div class="lens-inner">
+                                <div class="lens-glass">
+                                    <div class="lens-glare"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="camera-top-side">
+                        <div class="viewfinder">
+                            <div class="viewfinder-gap">
+                                <div class="viewfinder-glass">
+                                    <div class="viewfinder-lens">
+                                        <div class="viewfinder-lens-inner"></div>
+                                        <div class="viewfinder-glare"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="lightmeter">
+                            <div class="lightmeter-dial">
+                                <div class="lightmeter-dial-top"></div>
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
-            <div class="camera-middle">
-                <div class="rainbow-middle"></div>
-            </div>
-            <div class="camera-bumper">
-                <div class="rainbow-bumper"></div>
-            </div>
-            <div class="camera-bottom">
-                <div class="camera-front">
-                    <p>POLAROID LAND CAMERA</p>
+                <div class="camera-middle">
+                    <div class="rainbow-middle"></div>
                 </div>
-                <div class="tongue-top"></div>
-                <div class="tongue"></div>
-                <div class="tongue-gap"></div>
+                <div class="camera-bumper">
+                    <div class="rainbow-bumper"></div>
+                </div>
+                <div class="camera-bottom">
+                    <div class="camera-front">
+                        <p>POLAROID LAND CAMERA</p>
+                    </div>
+                    <div class="tongue-top"></div>
+                    <div class="tongue"></div>
+                    <div class="tongue-gap"></div>
+                </div>
             </div>
-        </div>
-    </section>
-    <section class="captured-polaroid">
-        <img id="photo" alt="Captured photo">
-        <h2>
-            Kiekeboe
-        </h2>
-    </section>
+        </section>
+        <section class="captured-polaroid">
+            <img id="photo" alt="Captured photo">
+            <h2>
+                Kiekeboe
+            </h2>
+        </section>
+    </header>
     <section>
         <video id="video" autoplay playsinline></video>
         <canvas id="canvas" style="display:none;"></canvas>
     </section>
-    <section>
-        <ul class="cards">
-            <li class="card-wrapper">
-                <div class="card">
-                    <section class="card-front">
-                        <img src="https://avatars.githubusercontent.com/u/144113542?s=48&v=4" alt="hoi">
-                        <h2>
-                            Wie ben ik?
-                        </h2>
-                    </section>
-                    <section class="card-back">
-                        <ul>
-                            <li>Naam: Quy Nguyen</li>
-                            <li>geboortedatum: </li>
-                            <li>Leeftijd: 22</li>
-                            <li>Woonplaats: Amersfoort</li>
-                        </ul>
-                    </section>
-                </div>
-            </li>
-            <li class="card-wrapper">
-                <div class="card">
-                    <section class="card-front">
-                        <img src="https://avatars.githubusercontent.com/u/144113542?s=48&v=4" alt="hoi">
-                        <h2>
-                            Leerdoel 1
-                        </h2>
-                    </section>
-                    <section class="card-back">
-                        <p>
-                            tekst
-                        </p>
-                    </section>
-                </div>
-            </li>
-            <li class="card-wrapper">
-                <div class="card">
-                    <section class="card-front">
-                        <img src="https://avatars.githubusercontent.com/u/144113542?s=48&v=4" alt="hoi">
-                        <h2>
-                            Leerdoel 2
-                        </h2>
-                    </section>
-                    <section class="card-back">
-                        <p>
-                            tekst
-                        </p>
-                    </section>
-                </div>
-            </li>
-            <li class="card-wrapper">
-                <div class="card">
-                    <section class="card-front">
-                        <img src="https://avatars.githubusercontent.com/u/144113542?s=48&v=4" alt="hoi">
-                        <h2>
-                            Leerdoel 3
-                        </h2>
-                    </section>
-                    <section class="card-back">
-                        <p>
-                            tekst
-                        </p>
-                    </section>
-                </div>
-            </li>
-            <li class="card-wrapper">
-                <div class="card">
-                    <section class="card-front">
-                        <img src="https://avatars.githubusercontent.com/u/144113542?s=48&v=4" alt="hoi">
-                        <h2>
-                            Hobbies
-                        </h2>
-                    </section>
-                    <section class="card-back">
-                        <p>
-                            tekst
-                        </p>
-                    </section>
-                </div>
-            </li>
-        </ul>
-    </section>
+    <main>
+        <section>
+            <ul class="cards">
+                <li class="card-wrapper">
+                    <div class="card">
+                        <section class="card-front">
+                            <img src="images/profile.jpg" alt="hoi">
+                            <h2>
+                                Wie ben ik?
+                            </h2>
+                        </section>
+                        <section class="card-back" id="wbi">
+                        </section>
+                    </div>
+                </li>
+                <li class="card-wrapper">
+                    <div class="card">
+                        <section class="card-front">
+                            <img src="images/SX70.jpg" alt="hoi">
+                            <h2>
+                                Hobbies
+                            </h2>
+                        </section>
+                        <section class="card-back">
+                            <p>
+                                tekst
+                            </p>
+                        </section>
+                    </div>
+                </li>
+            </ul>
+        </section>
+        <section>
+            <ul class="cards">
+                <li class="card-wrapper">
+                    <div class="card">
+                        <section class="card-front">
+                            <img src="images/jente.jpg" alt="hoi">
+                            <h2>
+                                Leerdoel 1
+                            </h2>
+                        </section>
+                        <section class="card-back">
+                            <p>
+                                Ik wil graag meer ervaring op willen doen met coderen in teams.
+                                Ik heb nog weinig de kans gehad om met meerdere mensen aan één project te werken.
+                            </p>
+                            <p>
+                                Ik wil hierbij graag verkennen hoe je samen met anderen kan coderen.
+                            </p>
+                        </section>
+                    </div>
+                </li>
+                <li class="card-wrapper">
+                    <div class="card">
+                        <section class="card-front">
+                            <img src="images/profile2.jpg" alt="hoi">
+                            <h2>
+                                Leerdoel 2
+                            </h2>
+                        </section>
+                        <section class="card-back">
+                            <p>
+                                Ik wil graag ontdekken wat er allemaal mogelijk is met javascript wat niet mogelijk is
+                                met alleen HTML en CSS.
+                            </p>
+                            <p>
+                                Wanneer gebruik ik het en wanneer is het niet nodig? Ik hoop aan het eind van de minor
+                                efficienten gebruik te kunnen maken van javascript.
+                            </p>
+                        </section>
+                    </div>
+                </li>
+                <li class="card-wrapper">
+                    <div class="card">
+                        <section class="card-front">
+                            <img src="images/crane.jpg" alt="hoi">
+                            <h2>
+                                Leerdoel 3
+                            </h2>
+                        </section>
+                        <section class="card-back">
+                            <p>
+                                Ik wil graag beter mijn ideeën kunnen overbrengen aan mijn team. Ik heb in het verleden
+                                vaak meegemaakt dat teamleden niet hetzelfde beeld hadden van het eindproduct.
+                            </p>
+                        </section>
+                    </div>
+                </li>
+            </ul>
+        </section>
+    </main>
     <script src="script.js"></script>
 </body>
 
