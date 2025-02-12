@@ -28,10 +28,27 @@ section {
     align-items: center;
 }
 
+.title{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.title h2{
+    background: #ddd;
+    padding: 0.5em;
+    border-radius: 1em;
+    margin-bottom: 0.5em;
+}
+
 h1 {
-    margin-bottom: 1rem;
+    margin: 1em;
     text-align: center;
     font-family: sans-serif;
+    background: #ddd;
+    padding: 1em;
+    border-radius: 1em;
 }
 
 h2 {
@@ -517,7 +534,6 @@ ul {
     width: 18em;
     position: relative;
     transform-style: preserve-3d;
-    transition: 0.5s ease;
     font-family: sans-serif;
 }
 
@@ -535,7 +551,7 @@ ul {
 
 .card-wrapper:not(:hover) .card,
 .card-wrapper:not(.flipped) .card {
-    transition: 1.5s ease;
+    transition: transform 0.8s ease-out, box-shadow 1s ease-out;
 }
 
 .card-front,
