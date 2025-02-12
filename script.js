@@ -37,6 +37,7 @@ async function getData(URL) {
 	);
 }
 
+// https://developer.mozilla.org/en-US/docs/Web/API/Media_Capture_and_Streams_API/Taking_still_photos#the_html_markup
 const video = document.getElementById('video');
 const canvas = document.getElementById('canvas');
 const photo = document.getElementById('photo');
@@ -59,13 +60,14 @@ async function startCamera() {
 	}
 }
 
-// met knop animatie beginnen en canves maken
+// met knop animatie beginnen en canvas maken
 captureButton.addEventListener('click', () => {
 	canvas.width = video.videoWidth;
 	canvas.height = video.videoHeight;
 	lens.classList.remove("rotate");
 	void lens.offsetWidth;
 	lens.classList.add("rotate");
+	document.getElementById("shutter-sound").play();
 	lens.addEventListener('animationend', () => {
 		capturedphoto.classList.add("show");
 		// frame uit video element halen en in canvas zetten

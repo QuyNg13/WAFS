@@ -28,6 +28,7 @@ h1{
 }
 
 h2{
+    margin-top: 0;
     font-family: sans-serif;
 }
 
@@ -545,7 +546,7 @@ ul {
     margin-top: 1em;
     margin-left: 1em;
     margin-left: 2em;
-    list-style: circle;
+    list-style: inside;
     text-align: left;
 }
 .card-back ul li {
