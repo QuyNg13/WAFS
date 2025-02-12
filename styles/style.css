@@ -534,18 +534,28 @@ ul {
 
 .card-back {
     transform: rotateY(180deg);
-    align-items: start;
     text-align: left;
 }
 
 .card-back p{
+    display: flex;
+    justify-content: center;
+    align-items: center;
     margin: 1em;
 }
 
+.card-back div{
+    background: #151515;
+    color: #ddd;
+    width: 100%;
+    aspect-ratio: 1 /1;
+    max-width: 88.57%;
+    margin-top: 5.71%;
+}
+
 .card-back ul {
-    margin-top: 1em;
     margin-left: 1em;
-    margin-left: 2em;
+    margin-top: 1em;
     list-style: inside;
     text-align: left;
 }
@@ -555,6 +565,10 @@ ul {
 
 .card-front{
     text-align: center;
+}
+
+.card-front h2{
+    margin-top: 1em;
 }
 
 .card-front img {
