@@ -509,7 +509,7 @@ ul {
     margin: 1em;
  }
  
- .card-wrapper:hover .card {
+ .card-wrapper:hover .card, .card-wrapper.flipped .card {
     transform: perspective(400px) rotateY(180deg) scale(1.1);
     box-shadow: 1px 5px 30px rgb(94, 94, 94);
     z-index: 1;

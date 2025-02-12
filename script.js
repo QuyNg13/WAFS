@@ -37,6 +37,10 @@ async function getData(URL) {
 	);
 }
 
+document.querySelectorAll(".card-wrapper").forEach(wrapper => 
+    wrapper.addEventListener("click", () => wrapper.classList.toggle("flipped"))
+);
+
 // https://developer.mozilla.org/en-US/docs/Web/API/Media_Capture_and_Streams_API/Taking_still_photos#the_html_markup
 const video = document.getElementById('video');
 const canvas = document.getElementById('canvas');
