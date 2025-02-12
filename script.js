@@ -44,6 +44,7 @@ const captureButton = document.getElementById('captureButton');
 const capturedphoto = document.querySelector('.captured-polaroid');
 const lens = document.querySelector('.lens-glass');
 
+// camera starten en streamen naar video element
 async function startCamera() {
 	try {
 		const stream = await navigator.mediaDevices.getUserMedia({
@@ -58,6 +59,7 @@ async function startCamera() {
 	}
 }
 
+// met knop animatie beginnen en canves maken
 captureButton.addEventListener('click', () => {
 	canvas.width = video.videoWidth;
 	canvas.height = video.videoHeight;
@@ -66,8 +68,11 @@ captureButton.addEventListener('click', () => {
 	lens.classList.add("rotate");
 	lens.addEventListener('animationend', () => {
 		capturedphoto.classList.add("show");
+		// frame uit video element halen en in canvas zetten
 		canvas.getContext('2d').drawImage(video, 0, 0, canvas.width, canvas.height);
+		// afbeelding in canvas opslaan
 		const imageDataUrl = canvas.toDataURL('image/jpeg');
+		// opgeslagen afbeelding tonen in photo element
 		photo.src = imageDataUrl;
 		photo.classList.add("show")
 	}, { once: true });

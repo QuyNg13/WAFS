@@ -37,6 +37,7 @@ p {
 
 ul {
     padding: 0;
+    margin: 0;
     list-style: none;
     text-align: left;
 }
@@ -462,6 +463,8 @@ ul {
     background: rgb(8, 8, 8);
     margin-top: 15px;
     border: solid 2px rgb(26, 26, 26);
+    color: white;
+    font-family: sans-serif;
 }
 
 .tongue{
@@ -520,7 +523,7 @@ ul {
     display: flex;
     flex-direction: column;
     justify-content:flex-start;
-    background-color: rgb(255, 255, 255);
+    background-color: rgb(243, 243, 243);
     position: absolute;
     height: 100%;
     width: 100%;
@@ -538,9 +541,15 @@ ul {
     margin: 1em;
 }
 
-.card-back ul{
+.card-back ul {
     margin-top: 1em;
     margin-left: 1em;
+    margin-left: 2em;
+    list-style: circle;
+    text-align: left;
+}
+.card-back ul li {
+    margin-top: 1em;
 }
 
 .card-front{
