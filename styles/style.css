@@ -96,6 +96,37 @@ ul {
     opacity: 0;
 }
 
+#gallery{
+    display: flex;
+    flex-direction: column;
+}
+
+#photo-gallery{
+    display: block;
+    max-width: 80vw;
+    text-align: center;
+}
+
+.gallery-polaroid{
+    display: inline-block;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    aspect-ratio: 3.5 / 4.2;
+    width: 18em;
+    background-color: rgb(255, 255, 255);
+    text-align: center;
+    margin: 1em;
+}
+
+.gallery-photo{
+    border: 1px solid #ddd;
+    background: lightblue;
+    aspect-ratio: 1 /1;
+    max-width: 88.57%;
+    margin-top: 5.71%;
+}
+
 .captured-polaroid {
     display: flex;
     flex-direction: column;

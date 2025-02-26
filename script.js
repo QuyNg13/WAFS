@@ -90,12 +90,25 @@ captureButton.addEventListener('click', () => {
 	}, { once: true });
 });
 
+// function addPhotoToGallery(imageDataUrl) {
+//     const img = document.createElement('img');
+//     img.src = imageDataUrl;
+//     img.alt = "Captured photo";
+//     img.classList.add('gallery-photo');
+//     gallery.appendChild(img);
+// }
+
 function addPhotoToGallery(imageDataUrl) {
+    const polaroidDiv = document.createElement('li');
+    polaroidDiv.classList.add('gallery-polaroid');
+
     const img = document.createElement('img');
     img.src = imageDataUrl;
-    img.alt = "Captured photo";
-    img.classList.add('gallery-photo');
-    gallery.appendChild(img);
+    img.alt = "gallery-photo";
+	img.classList.add('gallery-photo')
+
+    polaroidDiv.appendChild(img);
+    gallery.appendChild(polaroidDiv);
 }
 
 const clearButton = document.getElementById('clear-gallery');
