@@ -41,6 +41,15 @@ document.querySelectorAll(".card-wrapper").forEach(wrapper =>
 	wrapper.addEventListener("click", () => wrapper.classList.toggle("flipped"))
 );
 
+window.addEventListener('DOMContentLoaded', () => {
+    // Laad de opgeslagen foto's uit localStorage
+    const capturedPhotos = JSON.parse(localStorage.getItem('photos'));
+    // Vul de galerij met de opgeslagen foto's
+    capturedPhotos.forEach(imageDataUrl => {
+        addPhotoToGallery(imageDataUrl);
+    });
+});
+
 // https://developer.mozilla.org/en-US/docs/Web/API/Media_Capture_and_Streams_API/Taking_still_photos#the_html_markup
 const video = document.getElementById('video');
 const canvas = document.getElementById('canvas');
@@ -50,7 +59,7 @@ const capturedphoto = document.querySelector('.captured-polaroid');
 const lens = document.querySelector('.lens-glass');
 
 const gallery = document.getElementById('photo-gallery');
-const capturedPhotos = JSON.parse(localStorage.getItem('photos')) || [];
+const capturedPhotos = JSON.parse(localStorage.getItem('photos'));
 
 // camera starten en streamen naar video element
 async function startCamera() {
