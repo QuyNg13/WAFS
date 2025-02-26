@@ -49,6 +49,9 @@ const captureButton = document.getElementById('captureButton');
 const capturedphoto = document.querySelector('.captured-polaroid');
 const lens = document.querySelector('.lens-glass');
 
+const gallery = document.getElementById('photo-gallery');
+const capturedPhotos = JSON.parse(localStorage.getItem('photos')) || [];
+
 // camera starten en streamen naar video element
 async function startCamera() {
 	try {
@@ -81,7 +84,25 @@ captureButton.addEventListener('click', () => {
 		// opgeslagen afbeelding tonen in photo element
 		photo.src = imageDataUrl;
 		photo.classList.add("show")
+		capturedPhotos.push(imageDataUrl);
+        localStorage.setItem('photos', JSON.stringify(capturedPhotos));
+		addPhotoToGallery(imageDataUrl);
 	}, { once: true });
+});
+
+function addPhotoToGallery(imageDataUrl) {
+    const img = document.createElement('img');
+    img.src = imageDataUrl;
+    img.alt = "Captured photo";
+    img.classList.add('gallery-photo');
+    gallery.appendChild(img);
+}
+
+const clearButton = document.getElementById('clear-gallery');
+
+clearButton.addEventListener('click', () => {
+    localStorage.removeItem('photos');
+    gallery.innerHTML = '';
 });
 
 window.addEventListener('load', startCamera);
