@@ -68,35 +68,66 @@ async function startCamera() {
 }
 
 // met knop animatie beginnen en canvas maken
+// captureButton.addEventListener('click', () => {
+// 	canvas.width = video.videoWidth;
+// 	canvas.height = video.videoHeight;
+// 	lens.classList.remove("rotate");
+// 	void lens.offsetWidth;
+// 	lens.classList.add("rotate");
+// 	document.getElementById("shutter-sound").play();
+
+// 	lens.addEventListener('animationend', () => {
+// 		capturedphoto.classList.add("show");
+// 		// frame uit video element halen en in canvas zetten
+// 		canvas.getContext('2d').drawImage(video, 0, 0, canvas.width, canvas.height);
+// 		// afbeelding in canvas opslaan
+// 		const imageDataUrl = canvas.toDataURL('image/jpeg');
+// 		// opgeslagen afbeelding tonen in photo element
+// 		photo.src = imageDataUrl;
+// 		photo.classList.add("show")
+// 		capturedPhotos.push(imageDataUrl);
+//         localStorage.setItem('photos', JSON.stringify(capturedPhotos));
+// 		addPhotoToGallery(imageDataUrl);
+// 	}, { once: true });
+// });
+
 captureButton.addEventListener('click', () => {
-	canvas.width = video.videoWidth;
-	canvas.height = video.videoHeight;
-	lens.classList.remove("rotate");
-	void lens.offsetWidth;
-	lens.classList.add("rotate");
-	document.getElementById("shutter-sound").play();
-	lens.addEventListener('animationend', () => {
-		capturedphoto.classList.add("show");
-		// frame uit video element halen en in canvas zetten
-		canvas.getContext('2d').drawImage(video, 0, 0, canvas.width, canvas.height);
-		// afbeelding in canvas opslaan
-		const imageDataUrl = canvas.toDataURL('image/jpeg');
-		// opgeslagen afbeelding tonen in photo element
-		photo.src = imageDataUrl;
-		photo.classList.add("show")
-		capturedPhotos.push(imageDataUrl);
-        localStorage.setItem('photos', JSON.stringify(capturedPhotos));
-		addPhotoToGallery(imageDataUrl);
-	}, { once: true });
+    canvas.width = video.videoWidth;
+    canvas.height = video.videoHeight;
+    lens.classList.remove("rotate");
+    void lens.offsetWidth;
+    lens.classList.add("rotate");
+    document.getElementById("shutter-sound").play();
+
+    if (photo.classList.contains("show")) {
+        // Eerst de class "show" verwijderen en wachten op animatie-einde
+        photo.classList.remove("show");
+        capturedphoto.classList.remove("show");
+        // Wacht op het einde van de animatie voordat een nieuwe foto wordt gemaakt
+        capturedphoto.addEventListener("transitionend", () => {
+            takePhoto();
+        }, { once: true });
+    } else {
+        takePhoto();
+    }
 });
 
-// function addPhotoToGallery(imageDataUrl) {
-//     const img = document.createElement('img');
-//     img.src = imageDataUrl;
-//     img.alt = "Captured photo";
-//     img.classList.add('gallery-photo');
-//     gallery.appendChild(img);
-// }
+function takePhoto() {
+    lens.addEventListener('animationend', () => {
+        capturedphoto.classList.add("show");
+        // Frame uit video element halen en in canvas zetten
+        canvas.getContext('2d').drawImage(video, 0, 0, canvas.width, canvas.height);
+        // Afbeelding in canvas opslaan
+        const imageDataUrl = canvas.toDataURL('image/jpeg');
+        // Opgeslagen afbeelding tonen in photo element
+        photo.src = imageDataUrl;
+        photo.classList.add("show");
+        // Foto opslaan in localStorage en galerij
+        capturedPhotos.push(imageDataUrl);
+        localStorage.setItem('photos', JSON.stringify(capturedPhotos));
+        addPhotoToGallery(imageDataUrl);
+    }, { once: true });
+}
 
 function addPhotoToGallery(imageDataUrl) {
     const polaroidDiv = document.createElement('li');
