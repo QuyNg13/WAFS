@@ -3,26 +3,26 @@ const endpointMe = 'items/person/217'
 const myURL = baseURL + endpointMe;
 
 getData(myURL).then(data217 => {
-    let deH1 = document.querySelector("h1");
-    let wbisection = document.getElementById("wbi");
-    let user = data217.data;
-    let myName = user.name;
-    let birthDate = user.birthdate;
+	let deH1 = document.querySelector("h1");
+	let wbisection = document.getElementById("wbi");
+	let user = data217.data;
+	let myName = user.name;
+	let birthDate = user.birthdate;
 
-    let customData = JSON.parse(user.custom);
+	let customData = JSON.parse(user.custom);
 
-    let age = customData.leeftijd;
-    let hometown = customData.woonplaats;
+	let age = customData.leeftijd;
+	let hometown = customData.woonplaats;
 
-    let wbiHTML = `<ul>
+	let wbiHTML = `<ul>
         <li>Naam: ${myName}</li>
         <li>Geboortedatum: ${birthDate}</li>
         <li>Leeftijd: ${age}</li>
         <li>Woonplaats: ${hometown}</li>
     </ul>`;
 
-    wbisection.insertAdjacentHTML("beforeend", wbiHTML);
-    deH1.textContent = myName;
+	wbisection.insertAdjacentHTML("beforeend", wbiHTML);
+	deH1.textContent = myName;
 });
 
 async function getData(URL) {
@@ -37,8 +37,8 @@ async function getData(URL) {
 	);
 }
 
-document.querySelectorAll(".card-wrapper").forEach(wrapper => 
-    wrapper.addEventListener("click", () => wrapper.classList.toggle("flipped"))
+document.querySelectorAll(".card-wrapper").forEach(wrapper =>
+	wrapper.addEventListener("click", () => wrapper.classList.toggle("flipped"))
 );
 
 // https://developer.mozilla.org/en-US/docs/Web/API/Media_Capture_and_Streams_API/Taking_still_photos#the_html_markup
@@ -92,61 +92,63 @@ async function startCamera() {
 // });
 
 captureButton.addEventListener('click', () => {
-    canvas.width = video.videoWidth;
-    canvas.height = video.videoHeight;
-    lens.classList.remove("rotate");
-    void lens.offsetWidth;
-    lens.classList.add("rotate");
-    document.getElementById("shutter-sound").play();
+	canvas.width = video.videoWidth;
+	canvas.height = video.videoHeight;
+	lens.classList.remove("rotate");
+	void lens.offsetWidth;
+	lens.classList.add("rotate");
+	document.getElementById("shutter-sound").play();
 
-    if (photo.classList.contains("show")) {
-        // Eerst de class "show" verwijderen en wachten op animatie-einde
-        photo.classList.remove("show");
-        capturedphoto.classList.remove("show");
-        // Wacht op het einde van de animatie voordat een nieuwe foto wordt gemaakt
-        capturedphoto.addEventListener("transitionend", () => {
-            takePhoto();
-        }, { once: true });
-    } else {
-        takePhoto();
-    }
+	if (photo.classList.contains("show")) {
+		// Eerst de class "show" verwijderen en wachten op animatie-einde
+		photo.classList.remove("show");
+		capturedphoto.classList.remove("show");
+		// Wacht op het einde van de animatie voordat een nieuwe foto wordt gemaakt
+		capturedphoto.addEventListener("transitionend", () => {
+			takePhoto();
+		}, { once: true });
+	} else {
+		takePhoto();
+	}
 });
 
 function takePhoto() {
-    lens.addEventListener('animationend', () => {
-        capturedphoto.classList.add("show");
-        // Frame uit video element halen en in canvas zetten
-        canvas.getContext('2d').drawImage(video, 0, 0, canvas.width, canvas.height);
-        // Afbeelding in canvas opslaan
-        const imageDataUrl = canvas.toDataURL('image/jpeg');
-        // Opgeslagen afbeelding tonen in photo element
-        photo.src = imageDataUrl;
-        photo.classList.add("show");
-        // Foto opslaan in localStorage en galerij
-        capturedPhotos.push(imageDataUrl);
-        localStorage.setItem('photos', JSON.stringify(capturedPhotos));
-        addPhotoToGallery(imageDataUrl);
-    }, { once: true });
+	lens.addEventListener('animationend', () => {
+		capturedphoto.classList.add("show");
+		// Frame uit video element halen en in canvas zetten
+		canvas.getContext('2d').drawImage(video, 0, 0, canvas.width, canvas.height);
+		// Afbeelding in canvas opslaan
+		const imageDataUrl = canvas.toDataURL('image/jpeg');
+		// Opgeslagen afbeelding tonen in photo element
+		photo.src = imageDataUrl;
+		photo.classList.add("show");
+		// Foto opslaan in localStorage en galerij 
+		photo.addEventListener("transitionend", () => {
+			capturedPhotos.push(imageDataUrl);
+			localStorage.setItem('photos', JSON.stringify(capturedPhotos));
+			addPhotoToGallery(imageDataUrl);
+		}, { once: true });
+	}, { once: true });
 }
 
 function addPhotoToGallery(imageDataUrl) {
-    const polaroidDiv = document.createElement('li');
-    polaroidDiv.classList.add('gallery-polaroid');
+	const polaroidDiv = document.createElement('li');
+	polaroidDiv.classList.add('gallery-polaroid');
 
-    const img = document.createElement('img');
-    img.src = imageDataUrl;
-    img.alt = "gallery-photo";
+	const img = document.createElement('img');
+	img.src = imageDataUrl;
+	img.alt = "gallery-photo";
 	img.classList.add('gallery-photo')
 
-    polaroidDiv.appendChild(img);
-    gallery.appendChild(polaroidDiv);
+	polaroidDiv.appendChild(img);
+	gallery.appendChild(polaroidDiv);
 }
 
 const clearButton = document.getElementById('clear-gallery');
 
 clearButton.addEventListener('click', () => {
-    localStorage.removeItem('photos');
-    gallery.innerHTML = '';
+	localStorage.removeItem('photos');
+	gallery.innerHTML = '';
 });
 
 window.addEventListener('load', startCamera);
