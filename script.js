@@ -99,6 +99,7 @@ function takePhoto() {
 		photo.src = imageDataUrl;
 		photo.classList.add("show");
 		// Foto opslaan in localStorage en galerij als de foto klaar is met animeren
+		// https://www.surinderbhomra.com/Blog/2022/04/14/Storing-An-Array-of-Images-In-localStorage
 		photo.addEventListener("transitionend", () => {
 			capturedPhotos.push(imageDataUrl);
 			localStorage.setItem('photos', JSON.stringify(capturedPhotos));
