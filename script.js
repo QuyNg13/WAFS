@@ -67,30 +67,6 @@ async function startCamera() {
 	}
 }
 
-// met knop animatie beginnen en canvas maken
-// captureButton.addEventListener('click', () => {
-// 	canvas.width = video.videoWidth;
-// 	canvas.height = video.videoHeight;
-// 	lens.classList.remove("rotate");
-// 	void lens.offsetWidth;
-// 	lens.classList.add("rotate");
-// 	document.getElementById("shutter-sound").play();
-
-// 	lens.addEventListener('animationend', () => {
-// 		capturedphoto.classList.add("show");
-// 		// frame uit video element halen en in canvas zetten
-// 		canvas.getContext('2d').drawImage(video, 0, 0, canvas.width, canvas.height);
-// 		// afbeelding in canvas opslaan
-// 		const imageDataUrl = canvas.toDataURL('image/jpeg');
-// 		// opgeslagen afbeelding tonen in photo element
-// 		photo.src = imageDataUrl;
-// 		photo.classList.add("show")
-// 		capturedPhotos.push(imageDataUrl);
-//         localStorage.setItem('photos', JSON.stringify(capturedPhotos));
-// 		addPhotoToGallery(imageDataUrl);
-// 	}, { once: true });
-// });
-
 captureButton.addEventListener('click', () => {
 	canvas.width = video.videoWidth;
 	canvas.height = video.videoHeight;
@@ -122,7 +98,7 @@ function takePhoto() {
 		// Opgeslagen afbeelding tonen in photo element
 		photo.src = imageDataUrl;
 		photo.classList.add("show");
-		// Foto opslaan in localStorage en galerij 
+		// Foto opslaan in localStorage en galerij als de foto klaar is met animeren
 		photo.addEventListener("transitionend", () => {
 			capturedPhotos.push(imageDataUrl);
 			localStorage.setItem('photos', JSON.stringify(capturedPhotos));
