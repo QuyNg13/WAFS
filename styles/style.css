@@ -82,7 +82,7 @@ ul {
     opacity: 0;
 }
 
-main h2:nth-last-of-type(1){
+main h2:nth-child(1){
     background: #ddd;
     padding: 0.5em;
     border-radius: 1em;
