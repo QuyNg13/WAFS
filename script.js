@@ -43,7 +43,7 @@ document.querySelectorAll(".card-wrapper").forEach(wrapper =>
 
 window.addEventListener('DOMContentLoaded', () => {
     // Laad de opgeslagen foto's uit localStorage
-    const capturedPhotos = JSON.parse(localStorage.getItem('photos'));
+    const capturedPhotos = JSON.parse(localStorage.getItem('photos')) || [];
     // Vul de galerij met de opgeslagen foto's
     capturedPhotos.forEach(imageDataUrl => {
         addPhotoToGallery(imageDataUrl);
@@ -59,7 +59,7 @@ const capturedphoto = document.querySelector('.captured-polaroid');
 const lens = document.querySelector('.lens-glass');
 
 const gallery = document.getElementById('photo-gallery');
-const capturedPhotos = JSON.parse(localStorage.getItem('photos'));
+const capturedPhotos = JSON.parse(localStorage.getItem('photos')) || [];
 
 // camera starten en streamen naar video element
 async function startCamera() {
